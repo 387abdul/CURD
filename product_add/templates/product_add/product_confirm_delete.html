@@ -1,0 +1,12 @@
+{% extends "product_add/layout.html" %}
+
+{% block title %}Delete{% endblock title %}
+
+{% block content %}
+    <form action="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ product.name }}</p>
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a href="{% url 'all_product' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}
